@@ -23,6 +23,13 @@ int main() {
         printf("Direita\n");
         torre--;
     } while (torre >= 1);
+
+    printf("\nRainha movendo...\n");
+    // Implementação de Movimentação da Rainha
+    for (rainha; rainha >= 1; rainha--)
+    {
+        printf("Esquerda\n");
+    }
     
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
