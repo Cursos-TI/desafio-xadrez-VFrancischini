@@ -4,34 +4,34 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
-int main() {
-    // Nível Novato - Movimentação das Peças
-    int bispo = 5, torre = 5, rainha = 8, cavalo = 1;
-
-    printf("Bispo movendo...\n");
-    // Implementação de Movimentação do Bispo
-    while (bispo >= 1)
+void movimenoBispo(int casas){
+    if (casas > 0)
     {
         printf("Cima-Direita\n");
-        bispo--;
+        movimenoBispo(casas - 1);
     }
+}
 
-    printf("\nTorre movendo...\n");
-    // Implementação de Movimentação da Torre
-    do
+void movimentoTorre(int casas){
+    if (casas > 0)
     {
         printf("Direita\n");
-        torre--;
-    } while (torre >= 1);
+        movimentoTorre(casas - 1);
+    }
+}
 
-    printf("\nRainha movendo...\n");
-    // Implementação de Movimentação da Rainha
-    for (rainha; rainha >= 1; rainha--)
+void movimentoRainha(int casas){
+    if (casas > 0)
     {
         printf("Esquerda\n");
+        movimentoRainha(casas - 1);
     }
-    
-    printf("\nCavalo movendo...\n");
+}
+
+int main() {
+    int cavalo = 1;
+
+    printf("Cavalo movendo...\n");
     // Nível Aventureiro - Movimentação do Cavalo
     for (cavalo; cavalo <= 1; cavalo++)
     {
@@ -47,10 +47,16 @@ int main() {
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+    int bispo = 5, torre = 5, rainha = 8;
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+    printf("\nBispo movendo...\n");
+    movimenoBispo(bispo);
+
+    printf("\nTorre movendo...\n");
+    movimentoTorre(torre);
+
+    printf("\nRainha movendo...\n");
+    movimentoRainha(rainha);
 
     return 0;
 }
